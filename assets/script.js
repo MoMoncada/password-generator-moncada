@@ -32,52 +32,53 @@ function userPromptsChoices () {
   
 // We need to make sure the user enters a number AND a it's between 8-128
     if(isNaN(charLength) || charLength < 8 || charLength >128 ) { 
-    alert("Character length needs to be a number (8-128 characters). Pay attention!");
-    return false; 
+      alert("Character length needs to be a number (8-128 characters). Pay attention!");
+      return false; 
     
   }
 
 
   //The 'confirm' method displays a dialog box with a message, an OK button, and a Cancel button.
    if (confirm("Do you want to use Numbers in your password?")) {
-    selectedCharArray =  selectedCharArray.concat(numberChar);
+      selectedCharArray =  selectedCharArray.concat(numberChar);
   
   }
   
   if (confirm("Do you want to use Lower Case letters in your password?")) {
-    selectedCharArray = selectedCharArray.concat(lowerCaseChar);
+      selectedCharArray = selectedCharArray.concat(lowerCaseChar);
   
   }
 
   if (confirm("Do you want to use Upper Case letters in your password?")) {
-    selectedCharArray = selectedCharArray.concat(upperCaseChar);
+      selectedCharArray = selectedCharArray.concat(upperCaseChar);
 
   }
 
   if (confirm("Do you want to use Special Characters in your password?")) {
-    selectedCharArray = selectedCharArray.concat(specialChar);
+      selectedCharArray = selectedCharArray.concat(specialChar);
 
   }
   
-if(selectedCharArray.length === 0) { 
-  alert("You need to choose at least one type of character!");
+  if(selectedCharArray.length === 0) {  
+      alert("You need to choose at least one type of character!");
 }
 
-  return true;
+     
+return true;
 
-    }
+ }
 
 // ----- After the user has decided what characters to include in their password, the password can be generated ----- //
 
 function generatePassword () { 
   var password = "";
-  for(var i=0; i<charLength; i++) { // the for loop will run as many times as the user previously selected (between 8-128 times)
-    var randOutput = Math.floor(Math.random() * selectedCharArray.length);
-    password = password + selectedCharArray[randOutput]; // our blank array will fill up with random outputs of characters and added to the variable 'password'
+    for(var i=0; i<charLength; i++) { // the for loop will run as many times as the user previously selected (between 8-128 times)
+      var randOutput = Math.floor(Math.random() * selectedCharArray.length);
+      password = password + selectedCharArray[randOutput]; // our blank array will fill up with random outputs of characters and added to the variable 'password'
  
   } 
 
-  return password; 
+return password; 
 }
 
 
