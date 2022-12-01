@@ -58,10 +58,14 @@ function userPromptsChoices () {
     selectedCharArray = selectedCharArray.concat(specialChar);
 
   }
+  
+if(selectedCharArray.length === 0) { 
+  alert("You need to choose at least one type of character!");
+}
 
   return true;
 
-} 
+    }
 
 // ----- After the user has decided what characters to include in their password, the password can be generated ----- //
 
