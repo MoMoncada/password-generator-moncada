@@ -30,7 +30,7 @@ function userPromptsChoices () {
   charLength = parseInt(prompt("How many characters do you want in your password (password needs to have 8-128 characters)?")); // used 'parseInt' to make sure the answer returs as a number and not as a string
 
   
-
+// We need to make sure the user enters a number AND a it's between 8-128
     if(isNaN(charLength) || charLength < 8 || charLength >128 ) { 
     alert("Character length needs to be a number (8-128 characters). Pay attention!");
     return false; 
